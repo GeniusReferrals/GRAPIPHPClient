@@ -592,12 +592,12 @@ class GRPHPAPIClient implements ApiClientInterface {
      * @param string $strAccountSlug. The client account slug
      * @param array $arrParams
      * Request Format Not all parameters in the content of the request are mandatory.
-     * Parameters amount_of_payments and payment_amount are optional.
+     * Parameter payment_amount is optional.
+     * 
      * {
      *       "bonus":{
      *           "advocate_token":"7c4ae87701ef6e6c9ab64941215da6b1f90f5c7a",
      *           "reference": "HSY7292D00",
-     *           "amount_of_payments": 3,
      *           "payment_amount": 10
      *       }
      * }
@@ -643,10 +643,10 @@ class GRPHPAPIClient implements ApiClientInterface {
      *
      * @param string $strAccountSlug. The client account slug
      * @param array $arrParams
+     * 
      * {
      *     "advocate_token":"7c4ae87701ef6e6c9ab64941215da6b1f90f5c7a",
      *     "reference": "HSY7292D00",
-     *     "amount_of_payments": 3,
      *     "payment_amount": 10
      * }
      *
