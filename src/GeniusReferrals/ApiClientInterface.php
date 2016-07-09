@@ -53,6 +53,8 @@ interface ApiClientInterface {
     public function getBonuses($strAccountSlug, $intPage, $intLimit, $strFilter, $strSort);
 
     public function postBonuses($strAccountSlug, array $arrParams);
+    
+    public function postForceBonuses($strAccountSlug, array $arrParams);
 
     public function getBonus($strAccountSlug, $intBonusId);
 
