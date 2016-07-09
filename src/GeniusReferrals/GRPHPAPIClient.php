@@ -615,6 +615,38 @@ class GRPHPAPIClient implements ApiClientInterface {
 
         return $this->objResponse;
     }
+    
+    /**
+     * Force the system to give a bonus to an advocate. The system will not take into account the restriccions specified on the campaigns.
+     *
+     * Request Format
+     * 
+     * @param string $strAccountSlug. The client account slug
+     * @param array $arrParams
+     * 
+     * Request Format
+     * 
+     *  {
+     *      "bonus":{
+     *          "advocate_token":"7c4ae87701ef6e6c9ab64941215da6b1f90f5c7a",
+     *          "reference": "HSY7292D00",
+     *          "bonus_amount": 10
+     *      }
+     *  }
+     * @return string
+     */
+    public function postForcingBonuses($strAccountSlug, array $arrParams) {
+        $objWebClient = $this->getWebClient();
+
+        $strUri = $this->getApiUrl() . '/accounts/' . $strAccountSlug . '/bonuses/force';
+        $arrHeaders = $this->getHeaders();
+
+        $objRequest = $objWebClient->post($strUri, $arrHeaders, $arrParams);
+
+        $this->objResponse = $objRequest->send();
+
+        return $this->objResponse;
+    }
 
     /**
      * Get a bonus.
