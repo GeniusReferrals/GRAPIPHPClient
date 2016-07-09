@@ -635,7 +635,7 @@ class GRPHPAPIClient implements ApiClientInterface {
      *  }
      * @return string
      */
-    public function postForcingBonuses($strAccountSlug, array $arrParams) {
+    public function postForceBonuses($strAccountSlug, array $arrParams) {
         $objWebClient = $this->getWebClient();
 
         $strUri = $this->getApiUrl() . '/accounts/' . $strAccountSlug . '/bonuses/force';
