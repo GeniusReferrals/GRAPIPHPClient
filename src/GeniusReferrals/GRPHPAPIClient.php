@@ -544,6 +544,26 @@ class GRPHPAPIClient implements ApiClientInterface {
 
         return $this->objResponse;
     }
+    
+    /**
+     * Delete a referral.
+     *
+     * @param string $strAccountSlug. The client account slug
+     * @param string $strAdvocateToken. The advocate token
+     * @param integer $intReferralId. The referral id
+     */
+    public function deleteReferral($strAccountSlug, $strAdvocateToken, $intReferralId) {
+        $objWebClient = $this->getWebClient();
+
+        $strUri = $this->getApiUrl() . '/accounts/' . $strAccountSlug . '/advocates/' . $strAdvocateToken . '/referrals/' . $intReferralId;
+        $arrHeaders = $this->getHeaders();
+
+        $objRequest = $objWebClient->delete($strUri, $arrHeaders);
+
+        $this->objResponse = $objRequest->send();
+
+        return $this->objResponse;
+    }
 
     /**
      * Get the list of bonuses.
